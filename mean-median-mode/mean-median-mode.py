@@ -7,16 +7,12 @@ def mean_median_mode(x):
     """
     # Write code here
     arr = np.array(x)
+    
     mean = np.mean(arr)
+
     median = np.median(arr)
 
-    cnt = Counter(arr)
-    maxi = 0
-    mode = 0
-    for i in x:
-        if maxi < cnt[i]:
-            maxi = cnt[i]
-            mode = i
+    mode = Counter(arr).most_common(1)[0][0]
 
     return float(mean), float(median), float(mode)
     pass
